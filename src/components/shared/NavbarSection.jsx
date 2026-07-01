@@ -1,20 +1,12 @@
-import { useState } from "react";
-import { FaRegMoon } from "react-icons/fa";
-import { IoSunnyOutline } from "react-icons/io5";
+// import { useState } from "react";
+// import { FaRegMoon } from "react-icons/fa";
+// import { IoSunnyOutline } from "react-icons/io5";
+import { FaCartShopping } from "react-icons/fa6";
+
 import logo from "../../assets/logo.png";
 
 const NavbarSection = () => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
-
-    const toggleBgTheme = () => {
-        const newTheme = !isDarkMode;
-        setIsDarkMode(newTheme);
-
-        document.documentElement.setAttribute(
-            "data-theme",
-            newTheme ? "dark" : "light"
-        );
-    };
+    // const [isDarkMode, setIsDarkMode] = useState(true);
 
     return (
         <div className="navbar bg-base-100 shadow-sm px-4 md:px-8 lg:px-16">
@@ -54,10 +46,8 @@ const NavbarSection = () => {
                 </div>
 
                 <a href="/" className="flex items-center gap-2">
-                    <img src={logo} alt="Logo" className="w-10 h-10 md:w-12 md:h-12" />
-                    <span className="text-xl font-bold hidden sm:block">
-                        CEMZO Store
-                    </span>
+                    <img src={logo} alt="Logo" className="w-15 h-15 md:w-12 md:h-12" />
+
                 </a>
             </div>
 
@@ -76,7 +66,8 @@ const NavbarSection = () => {
             </div>
 
             <div className="navbar-end">
-                <button
+                <FaCartShopping className="w-20" />
+                {/* <button
                     className="btn btn-circle"
                     onClick={toggleBgTheme}
                 >
@@ -85,7 +76,7 @@ const NavbarSection = () => {
                     ) : (
                         <FaRegMoon size={20} />
                     )}
-                </button>
+                </button> */}
             </div>
         </div>
     );

@@ -32,10 +32,11 @@ const Home = () => {
 
 
     return (
-        <>
+        <div className="nunito-sans ">
             <NavbarSection />
 
             <div className="container mx-auto px-4 py-6">
+                <h1 className="text-3xl font-bold mb-4">Product Catalog</h1>
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-8">
                     <ProductSearch
                         search={search}
@@ -62,7 +63,7 @@ const Home = () => {
             </div>
 
             <Footer />
-        </>
+        </div>
     );
 };
 

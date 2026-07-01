@@ -5,7 +5,6 @@ const ProductDetails = ({ selectedProduct, setSelectedProduct }) => {
     return (
         <dialog open className="modal">
             <div className="modal-box">
-
                 <img
                     src={selectedProduct.image}
                     alt={selectedProduct.title}
