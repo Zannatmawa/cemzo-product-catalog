@@ -29,12 +29,12 @@ const SearchByCategory = ({ category, setCategory }) => {
                 role="button"
                 className="btn btn-outline w-full sm:w-auto"
             >
-                {category === "All" ? "Filter By Category" : category}
+                Filter By Category
             </div>
 
             <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-2 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-2 w-72 p-2 shadow"
             >
                 {categories.map((item) => (
                     <li key={item.id}>
