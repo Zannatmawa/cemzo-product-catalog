@@ -48,11 +48,13 @@ const Home = () => {
                     />
                 </div>
 
-                <AllProductCard
-                    filteredProducts={filteredProducts}
-                    setSelectedProduct={setSelectedProduct}
+                <div id="products">
+                    <AllProductCard
+                        filteredProducts={filteredProducts}
+                        setSelectedProduct={setSelectedProduct}
+                    />
+                </div>
 
-                />
                 <ProductDetails
                     selectedProduct={selectedProduct}
                     setSelectedProduct={setSelectedProduct}
@@ -65,3 +67,7 @@ const Home = () => {
 };
 
 export default Home;
+
+// git add .
+// git commit -m "Update project"
+// git push origin main
