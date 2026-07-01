@@ -1,6 +1,27 @@
 import { useState } from "react";
 import ProductCard from "./ProductCard";
-
+const categories = [
+    {
+        id: 1,
+        name: "men's clothing",
+    },
+    {
+        id: 2,
+        name: "jewelery",
+    },
+    {
+        id: 3,
+        name: "electronics",
+    },
+    {
+        id: 4,
+        name: "women's clothing",
+    },
+    {
+        id: 5,
+        name: "all",
+    },
+];
 const ProductSearch = ({ allProducts }) => {
     const [product, setProduct] = useState(allProducts)
     console.log(allProducts)
@@ -39,10 +60,22 @@ const ProductSearch = ({ allProducts }) => {
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-52 p-2 shadow"
                         >
-                            <li><a>men's clothing</a></li>
-                            <li><a>jewelery</a></li>
-                            <li><a>electronics</a></li>
-                            <li><a>women's clothing</a></li>
+                            {categories.map((category) => (
+                                <li key={category.id}>
+                                    <button
+                                        onClick={() => {
+                                            const filterProductsByCategory = allProducts.filter((product) =>
+                                                category.name === "all"
+                                                    ? true
+                                                    : product.category === category.name
+                                            );
+                                            setProduct(filterProductsByCategory);
+                                        }}
+                                    >
+                                        {category.name}
+                                    </button>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
