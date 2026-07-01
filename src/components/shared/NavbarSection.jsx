@@ -6,7 +6,7 @@ import logo from "../../assets/logo.png";
 const NavbarSection = () => {
     const [isDarkMode, setIsDarkMode] = useState(true);
     return (
-        <div className="navbar bg-base-100 shadow-sm">
+        <div className="navbar bg-base-100 shadow-sm px-15">
             <div className="navbar-start">
                 {/* <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -21,10 +21,10 @@ const NavbarSection = () => {
                 </div> */}
                 <img src={logo} alt="logo" className="w-15 h-10 mr-2" />
             </div>
-            <div className="navbar-center hidden lg:flex">
-                {/* <input type="text" placeholder="Search By Product Name" className="input input-bordered w-64 lg:w-87" /> */}
+            {/* <div className="navbar-center hidden lg:flex">
+                <input type="text" placeholder="Search By Product Name" className="input input-bordered w-64 lg:w-87" />
 
-            </div>
+            </div> */}
             <div className="navbar-end">
                 <a className="btn">
                     {isDarkMode ? <IoSunnyOutline /> : <FaRegMoon />}

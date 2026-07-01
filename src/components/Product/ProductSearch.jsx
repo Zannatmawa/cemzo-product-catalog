@@ -16,17 +16,29 @@ const ProductSearch = ({ allProducts }) => {
     };
     return (
         <div>
-            <div className="flex justify-between flex-row items-center p-4">
-                <h1>All Products</h1>
-                <div>
-                    <input onChange={handleSearch} type="text" placeholder="Search By Product Name" className="input input-bordered w-64 lg:w-87" />
-                    <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-outline m-1">
-                            Search By Category
+            <div className="flex flex-col lg:flex-row justify-between items-center gap-4 p-4">
+                <h1 className="text-2xl font-bold">All Products</h1>
+                <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+                    <input
+                        onChange={handleSearch}
+                        type="text"
+                        placeholder="Search By Product Name"
+                        className="input input-bordered w-full sm:w-72 lg:w-80"
+                    />
+
+                    <div className="dropdown w-full sm:w-auto">
+                        <div
+                            tabIndex={0}
+                            role="button"
+                            className="btn btn-outline w-full sm:w-auto"
+                        >
+                            Filter By Category
                         </div>
+
                         <ul
-                            tabIndex="-1"
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-2 w-52 p-2 shadow"
+                        >
                             <li><a>men's clothing</a></li>
                             <li><a>jewelery</a></li>
                             <li><a>electronics</a></li>
