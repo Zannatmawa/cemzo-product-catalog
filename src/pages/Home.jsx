@@ -3,22 +3,24 @@ import NavbarSection from '../components/shared/NavbarSection'
 import AllProductCard from '../components/Product/AllProductCard'
 import Footer from '../components/shared/Footer'
 import axios from 'axios'
+import useProducts from '../hooks/useProduct'
 
 
 const Home = () => {
-    const url = 'https://fakestoreapi.com/products'
-    const [allProducts, setAllProducts] = useState([])
-    useEffect(() => {
-        const allProducts = axios.get(`${url}`)
-            .then(res => setAllProducts(res.data))
-    }, []);
+    const { products, loading, error } = useProducts();
+
+    // if (loading) return <Loader />;
+    // if (error) return <ErrorMessage message={error} />;
+
     return (
         <>
             <NavbarSection />
-            <AllProductCard allProducts={allProducts} />
+            <AllProductCard allProducts={products} />
             <Footer />
         </>
-    )
+    );
 }
+
+
 
 export default Home
