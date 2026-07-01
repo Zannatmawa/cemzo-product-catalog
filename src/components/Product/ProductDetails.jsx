@@ -1,23 +1,48 @@
 
-const ProductDetails = ({ id }) => {
-    console.log(id)
+const ProductDetails = ({ selectedProduct, setSelectedProduct }) => {
+    if (!selectedProduct) return null;
+
     return (
-        <div>
-            <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>open modal</button>
-            <dialog id="my_modal_1" className="modal">
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Hello!</h3>
-                    <p className="py-4">Press ESC key or click the button below to close</p>
-                    <div className="modal-action">
-                        <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
-                            <button className="btn">Close</button>
-                        </form>
-                    </div>
+        <dialog open className="modal">
+            <div className="modal-box">
+
+                <img
+                    src={selectedProduct.image}
+                    alt={selectedProduct.title}
+                    className="w-48 mx-auto"
+                />
+
+                <h2 className="text-2xl font-bold mt-4">
+                    {selectedProduct.title}
+                </h2>
+
+                <p className="mt-4">
+                    {selectedProduct.description}
+                </p>
+
+                <p className="font-bold mt-4">
+                    ${selectedProduct.price}
+                </p>
+
+                <p>
+                    ⭐ {selectedProduct.rating.rate}
+                </p>
+
+                <div className="modal-action">
+                    <button
+                        className="btn"
+                        onClick={() => setSelectedProduct(null)}
+                    >
+                        Close
+                    </button>
                 </div>
-            </dialog>
-        </div>
-    )
-}
+
+            </div>
+        </dialog>
+    );
+};
+
+
+
 
 export default ProductDetails

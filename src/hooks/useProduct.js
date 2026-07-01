@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getProducts } from "../services/fetchApi";
 
 const useProducts = () => {
-    const [products, setProducts] = useState([]);
+    const [allProducts, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
 
@@ -21,7 +21,7 @@ const useProducts = () => {
         fetchProducts();
     }, []);
 
-    return { products, loading, error };
+    return { allProducts, loading, error };
 };
 
 export default useProducts;

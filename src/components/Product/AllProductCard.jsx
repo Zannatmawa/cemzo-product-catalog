@@ -1,19 +1,16 @@
-// import ProductCard from './ProductCard'
-import ProductSearch from './ProductSearch'
+import ProductCard from './ProductCard'
 
-const AllProductCard = ({ allProducts }) => {
+const AllProductCard = ({ setSelectedProduct, filteredProducts }) => {
+
     return (
-        <div className='container mx-auto'>
-            <div className='flex justify-between items-center p-4'>
-                <ProductSearch allProducts={allProducts} />
-            </div>
-
-            {/* <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4'>
-                {allProducts.map(product => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-
-            </div> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {filteredProducts.map((product) => (
+                <ProductCard
+                    key={product.id}
+                    product={product}
+                    setSelectedProduct={setSelectedProduct}
+                />
+            ))}
         </div>
     )
 }
