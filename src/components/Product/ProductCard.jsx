@@ -1,17 +1,25 @@
+import Button from "../commonUi/Button";
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
+    const { id, rating, category, title, price, image } = product || {};
     return (
-        <div className="card bg-base-100 w-96 shadow-sm">
+        <div className="card bg-base-100 w-76 shadow-sm">
             <figure>
                 <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes" />
+                    key={id}
+                    src={image}
+                    className="w-full h-64 object-cover"
+                    alt={title} />
             </figure>
             <div className="card-body">
-                <h2 className="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+                <h2 className="card-title">{title}</h2>
+                <h3>{price}</h3>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <div className="badge badge-outline">{rating.rate}</div>
+                    <div className="badge badge-outline">{category}</div>
+                </div>
+                <div className="card-actions justify-end">
+                    <Button id={id} title={"See More"} />
                 </div>
             </div>
         </div>

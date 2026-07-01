@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import NavbarSection from '../components/shared/NavbarSection'
 import AllProductCard from '../components/Product/AllProductCard'
 import Footer from '../components/shared/Footer'
@@ -6,14 +6,16 @@ import axios from 'axios'
 
 
 const Home = () => {
+    const url = 'https://fakestoreapi.com/products'
+    const [allProducts, setAllProducts] = useState([])
     useEffect(() => {
-        const data = axios.get('https://fakestoreapi.com/products')
-        console.log(data)
+        const allProducts = axios.get(`${url}`)
+            .then(res => setAllProducts(res.data))
     }, []);
     return (
         <>
             <NavbarSection />
-            <AllProductCard />
+            <AllProductCard allProducts={allProducts} />
             <Footer />
         </>
     )
