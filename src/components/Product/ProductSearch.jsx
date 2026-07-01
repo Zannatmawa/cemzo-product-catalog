@@ -17,12 +17,12 @@ const ProductSearch = ({ allProducts }) => {
     return (
         <div>
             <div className="flex justify-between flex-row items-center p-4">
-                <h1>ALL PRODUCT</h1>
+                <h1>All Products</h1>
                 <div>
                     <input onChange={handleSearch} type="text" placeholder="Search By Product Name" className="input input-bordered w-64 lg:w-87" />
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost ">
-                            category
+                        <div tabIndex={0} role="button" className="btn btn-outline m-1">
+                            Search By Category
                         </div>
                         <ul
                             tabIndex="-1"

@@ -1,4 +1,4 @@
-import Button from "../commonUi/Button";
+// import Button from "../commonUi/Button";
 
 const ProductCard = ({ product }) => {
     const { id, rating, category, title, price, image } = product || {};
@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
                 <h2 className="card-title">{title}</h2>
                 <h3>{price}</h3>
                 <div className="card-actions justify-end">
-                    {/* <div className="badge badge-outline">{rating.rate}</div> */}
+                    <div className="badge badge-outline">{rating.rate}</div>
                     <div className="badge badge-outline">{category}</div>
                 </div>
                 <div className="card-actions justify-end">

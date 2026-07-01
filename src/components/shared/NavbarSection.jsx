@@ -1,5 +1,10 @@
+import { useState } from "react";
+import { FaRegMoon } from "react-icons/fa";
+import { IoSunnyOutline } from "react-icons/io5";
+import logo from "../../assets/logo.png";
 
 const NavbarSection = () => {
+    const [isDarkMode, setIsDarkMode] = useState(true);
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -14,14 +19,16 @@ const NavbarSection = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div> */}
-                <a className="btn btn-ghost text-xl">logo</a>
+                <img src={logo} alt="logo" className="w-15 h-10 mr-2" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 {/* <input type="text" placeholder="Search By Product Name" className="input input-bordered w-64 lg:w-87" /> */}
 
             </div>
             <div className="navbar-end">
-                <a className="btn">toggole</a>
+                <a className="btn">
+                    {isDarkMode ? <IoSunnyOutline /> : <FaRegMoon />}
+                </a>
             </div>
         </div>
     )
