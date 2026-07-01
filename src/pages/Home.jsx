@@ -36,7 +36,7 @@ const Home = () => {
             <NavbarSection />
 
             <div className="container mx-auto px-4 py-6">
-                <h1 className="lg:text-3xl md:text-2xl font-bold mb-4 lg:text-left md:text-left text-center">Product Catalog</h1>
+                <h1 className="lg:text-3xl md:text-2xl font-bold mb-4 lg:text-left  text-center">Product Catalog</h1>
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-4 mb-8">
                     <ProductSearch
                         search={search}
