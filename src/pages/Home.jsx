@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react'
 import NavbarSection from '../components/shared/NavbarSection'
 import AllProductCard from '../components/Product/AllProductCard'
 import Footer from '../components/shared/Footer'
-import axios from 'axios'
 import useProducts from '../hooks/useProduct'
+import Loader from '../components/commonUi/Loader'
 
 
 const Home = () => {
-    const { products, loading, error } = useProducts();
+    const { products, loading } = useProducts();
 
-    // if (loading) return <Loader />;
+    if (loading) return <Loader />;
     // if (error) return <ErrorMessage message={error} />;
 
     return (
